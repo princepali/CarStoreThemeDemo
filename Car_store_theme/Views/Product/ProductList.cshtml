@@ -1,0 +1,222 @@
+﻿<body ng-controller="productCtrl" ng-init="checkUserCookie();getProductList();getCategories()">
+    <div class="container mt-2">
+        @Html.Partial("~/Views/Shared/_LayoutHeader.cshtml")
+        <!--  Header starts-->
+        <!--  Header end-->
+        <div class="row my-2 border">
+            <!--Page Directory-->
+            <div class="col-12 col-sm-12 bg-white p-2">
+                <a class="text-muted" href="@Url.Action("Index","Home")">Home</a>
+                <span>|</span>
+                <a class="text-danger" href="@Url.Action("ProductList","Product")">Mercedes</a>
+            </div>
+        </div>
+        <!--Main Product Section-->
+        <div class="row bg-white border">
+            <!--Accordion Category starts-->
+            <div class="col-12 col-sm-5 col-md-4 col-lg-3 col-xs-6 my-3">
+                <div class="border border-dark">
+                    <div class="bg-dark p-2 m-1 border border-dark">
+                        <div class="col-12 text-white fw-bold">Categories</div>
+                    </div>
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item border" ng-repeat="product in datactgy | limitTo:1">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne" ng-bind="product.categoriesName">
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                                 aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <p ng-bind="product.ClothingItem"></p>
+                                    <p ng-bind="product.VehicleBracelets"></p>
+                                    <p ng-bind="product.VehicleRings"></p>
+                                    <p ng-bind="product.Shoes"></p>
+                                    <p ng-bind="product.Lingeries"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border" ng-repeat="product in datactgy | limitTo:1:1">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseTwo" ng-bind="product.categoriesName">
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                 aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body">
+                                    <p ng-bind="product.ClothingItem"></p>
+                                    <p ng-bind="product.VehicleBracelets"></p>
+                                    <p ng-bind="product.VehicleRings"></p>
+                                    <p ng-bind="product.Shoes"></p>
+                                    <p ng-bind="product.Lingeries"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border" ng-repeat="product in datactgy | limitTo:2:2">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseThree" ng-bind="product.categoriesName">
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                 aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    <p ng-bind="product.ClothingItem"></p>
+                                    <p ng-bind="product.VehicleBracelets"></p>
+                                    <p ng-bind="product.VehicleRings"></p>
+                                    <p ng-bind="product.Shoes"></p>
+                                    <p ng-bind="product.Lingeries"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseFour">
+                                    Chevrolet
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                                 aria-labelledby="panelsStayOpen-headingFour">
+                                <div class="accordion-body">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseFive">
+                                    Audi
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+                                 aria-labelledby="panelsStayOpen-headingFive">
+                                <div class="accordion-body">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseSix">
+                                    BMW
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse"
+                                 aria-labelledby="panelsStayOpen-headingSix">
+                                <div class="accordion-body">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseSeven">
+                                    Lexus
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse"
+                                 aria-labelledby="panelsStayOpen-headingSeven">
+                                <div class="accordion-body">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Mostview items starts-->
+                <div class="col-12 mt-3 ">
+                    <div class="col-12 col-md-12 mb-3 border border-bottom border-dark">
+                        <div class="col-12 p-1">
+                            <span class="bgcolor text-white fw-bold text-xl-start p-2 d-flex">Most View</span>
+                        </div>
+
+                        <div class="px-3">
+                            <!-- Product Title1 -->
+                            <div class="row Categoryproductborder" ng-repeat="product in dataList | limitTo:5">
+                                <!-- Product Image1 -->
+                                <div class="col-4 col-md-4 img">
+                                    <a href="@Url.Action("ProductDetail","Product")?Id={{product.ProductId}}">
+                                        <img class="img-fluid my-auto old_image align-self-center" ng-src="{{product.Image}}">
+                                        <img class="img-fluid my-auto change_image align-self-center" ng-src="{{product.HoverImage}}">
+                                    </a>
+                                </div>
+                                <div class="col-8 col-md-8 align-self-center overflowitem">
+                                    <h6 ng-bind="product.ProductName"></h6>
+                                    <strong class="redtext fw-bold" ng-bind="'$'+ product.Price"></strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Mostview items ends-->
+            <!--Product Section starts-->
+            <div class="col-12 col-sm-7 col-md-8 col-lg-9 col-xs-6">
+                <!--Sort filters section -->
+                <div class="row m-3">
+                    <div class="col-4 col-sm-5">
+                        <a>
+                            <i class="fa fa-2xl fa-th-large bgcolor text-white border p-2"></i>
+                            <i class="fa fa-2xl fa-list bg-white border p-2"></i>
+                        </a>
+                    </div>
+                    <div class="col-8 col-sm-7">
+                        <div class="float-end w-auto">
+                            <select class="form-select mb-4 p-2" aria-label="Default select example" ng-change="sortFilter()" ng-model="Sort.select">
+                                <option value="" selected>Filter Price</option>
+                                <option value="low to high" ng-model="select">Low To High</option>
+                                <option value="high to low" ng-model="select">High To Low</option>
+                                <option value="A-Z" ng-model="select">Sort By A-Z</option>
+                                <option value="Z-A" ng-model="select">Sort By Z-A</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--product image section start-->
+                <div class="row m-3 border-bottom border-top border-start">
+                    <div class="col-12 col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 text-center border-end img position-relative" ng-repeat="productd in dataList | limitTo:12">
+                        <div class="wishlisticonhover">
+                            <div class="mt-1 float-end wishlisticon">
+                                <a href="#" class="redtext">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="@Url.Action("ProductDetail","Product")?Id={{productd.ProductId}}">
+                                    <img class="img-fluid old_image" ng-src="{{productd.Image}}">
+                                    <img class="img-fluid change_image" ng-src="{{productd.HoverImage}}" />
+                                </a>
+                            </div>
+                            <div class="overflowitem">
+                                <strong ng-bind="productd.ProductName"></strong>
+                                <div>
+                                    <span class="redtext fw-bold" ng-bind="'$'+ productd.Price"></span>
+                                </div>
+                                <div>
+                                    <i class="fa fa-star text-warning" ng-repeat="i in dataList | limitTo:productd.Rating"></i>                                
+                                </div>
+                                <div>
+                                    <button href="#" class="Countericon border btn bgcolor text-white mb-3" ng-click="Addtocart(productd.ProductId)">+ ADD TO CART</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Product Section end-->
+        </div>
+    </div>
+    <!--container end-->
+    <!--footer starts-->
+    <!-- Footer Ends Here -->
+</body>
+

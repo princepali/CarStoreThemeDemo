@@ -1,0 +1,242 @@
+.headcontainer{
+    margin-top:-8px;
+}
+a, u {
+    text-decoration: none;
+}
+body,footer{
+    background-image: url("/images/bg-body.jpg");   
+}
+a:hover{
+  color:red !important; 
+}
+.btn:hover{
+    background-color:black !important;
+}
+.border {
+    border-radius: 0px !important;
+}
+.bgcolor {
+    background-color: #c41c1c;
+}
+.bg-dark{
+    background-color:black !important;
+}
+.text-dark{
+    color:black !important;
+    font-size:small;
+}
+.Homenav {
+    background-color: #c41c1c;
+}
+.copyrightmgn{
+    margin-top:-18px;
+}
+.navbartop{
+    margin-top:-9px;
+    margin-left:-12px;
+    margin-right:-12px;
+}
+.navmargin{
+    margin-bottom:-8px;
+}
+.border {
+    border-radius: 0px;
+}
+.carouselmidtext {
+    color: #ff8400;
+    font-family: 'Niconne', cursive;
+}
+.greetingtxt {
+    font-size: 22px;
+    color: #c41c1c;
+}
+h1, .Seatcover {
+    position: absolute;
+    left: 60%;
+    top: 20%;
+}
+h3{
+    position: absolute;
+    left: 60%;
+    top: 38%;
+}
+h4{
+    position: absolute;
+    left: 60%;
+    top: 50%;
+}
+/* Mobiles */
+@media all and (max-width:767px)  {
+    h3 {
+        font-size: 10px;
+    }
+
+    h1, .Seatcover {
+        font-size: 16px;
+    }
+}
+@media all and (min-width:768px){
+    h3 {
+        font-size: 18px;
+    }
+    h1, .Seatcover {
+        font-size: 25px;
+    }
+}
+/* Desktop */
+@media all and (min-width:997px) {
+   h4{
+        font-size: 50px;
+    }
+    h1, .Seatcover {
+        font-size: 50px;
+    }
+    h3{
+        font-size:23px;
+    }
+}
+@media all and (min-width:1300px) {
+    h4 {
+        font-size: 60px;
+    }
+
+    h1, .Seatcover {
+        font-size: 55px;
+    }
+    h3{
+        font-size:25px;
+    }
+}
+.wheels, .Seatcover {
+    font-family: 'Shrikhand', cursive;
+}
+.titlecart {
+    font-family: 'Shrikhand', cursive;
+}
+.searchbar {
+    margin-bottom: 1px !important;
+}
+.change_image{
+    display:none;
+}
+.img:hover .change_image{
+    display:block;
+}
+.img:hover .old_image{
+    display:none;
+}
+@media all and (max-width:767px) {
+    strong {
+        font-size: 12px;
+    }
+    .pdpproductbtn {
+        font-size: 12px;
+    }
+}
+.overflowitem {
+    white-space: nowrap;
+    overflow: hidden;
+}
+@media screen and (min-width: 768px) and (max-width:992px) {
+    .newproductbtn {
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 992px) and (max-width:1200px) {
+    .pdpproductbtn {
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width:1200px) {
+    .carouselpdpcartbtn {
+        font-size: 12px;
+    }
+}
+/*Login Register button and welcome greeting msg on mobile*/
+@media screen and (max-width: 767px) {
+    .Myaccountdesk{
+    font-size:7px;
+    }
+    .greetingtxt {
+        font-size: 14px;
+        color: #c41c1c;
+    }
+    .carouselpdpcartbtn {
+        font-size: 8px;
+    }
+}
+/*Featured menuitem on Index Page*/
+.featuredtitle{
+    margin-bottom:-25px;
+}
+::placeholder {
+    color: lightslategrey !important;
+}
+/*Pdp Carousel Indicator*/
+.indicat_width {
+    width: 50px !important;
+}
+/*Login and Registration title heading */
+.Accounttitle{
+    font-size: 2em;
+}
+/*Basket table font-face Size on Mobile*/
+@media screen and (max-width: 767px) {
+    .baskettbl {
+        font-size: 8px;
+    }
+}
+.Categoryproductborder {
+    border-bottom: 1px solid black;
+}
+.Categoryproductborder:last-child {
+    border-bottom: none;
+}
+.redtext {
+    color:#c41c1c;
+}
+.wishlisticon{
+    position:absolute;
+    right:6%;
+
+}
+/*Wishlist Icon Size on mobile and tablets*/
+@media screen and (min-width: 330px) and (max-width:768px) {
+    .wishlisticon {
+        font-size: 24px;
+    }
+}
+/*Wishlist Icon Size on Desktop and Large Screen*/
+@media screen and (min-width: 1200px) {
+    .wishlisticon {
+        font-size: 22px;
+    }
+}
+
+.wishlisticonhover .wishlisticon {
+    visibility: hidden;
+}
+.wishlisticonhover:hover .wishlisticon {
+    visibility: visible;
+}
+input{
+    border-radius:0px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

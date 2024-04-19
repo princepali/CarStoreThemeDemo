@@ -1,0 +1,83 @@
+﻿<header class="bg-light mt-2">
+    @*Logo*@
+    <div class="row bg-light">
+        <div class="col-5 col-sm-6">
+            <div class="row">
+                <div class="col-12">
+                    <img src="~/images/logo.png" class="img-fluid" alt="logo" />
+                </div>
+            </div>
+        </div>
+        <div class="col-7 col-sm-6 mt-1">
+            <div class="row">
+                <a class="d-none d-sm-block" href="@Url.Action("Basket","Product")">
+                    <img class="float-end m-3" src="~/images/icon-cart.png" />
+                </a>
+                <div class="col-sm-12 d-flex searchbar w-100 pt-2 my-1">
+                    <input class="d-flex w-100 border bg-light" type="text" placeholder="Search Entire Store here" />
+                    <input class="border bgcolor text-white" type="button" value="search" />
+                </div>
+            </div>
+            <div class="row d-sm-none d-block">
+                <div class="col-sm-12 d-none d-sm-block d-flex searchbar w-100 pt-2 my-1">
+                    <input class="d-flex w-100 border" type="text" placeholder="Search Entire Store here" />
+                    <input class="border bgcolor text-white" type="button" value="search" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Navbar starts-->
+    <div class="row bg-light">
+        <div class="col-12 col-sm-12">
+            <nav class="navbar visible-lg navbartop navbar-expand-lg navbar-light ">
+                <button class="navbar-toggler m-2 text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-white" id="navbarNav">
+                    <div class="navbar-nav">
+                        <div class="bottom-link">
+                            <ul class="list-group list-group-horizontal-md">
+                                <li class="d-block d-sm-none m-sm-1">
+
+                                    <a href="@Url.Action("Basket","Product")">
+                                        <img src="~/images/icon-cart.png" />
+                                        <span class="fw-normal">
+                                            Items
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item Homenav border">
+                                    <a class=" fw-bold text-white" href="@Url.Action("Index","Home")">HOME</a>
+                                </li>
+                                <li class="list-group-item border">
+                                    <a class="fw-bold text-dark" href="@Url.Action("Productlist","Product")">MERCEDES</a>
+                                </li>
+                                <li class="list-group-item border">
+                                    <a class="fw-bold text-dark" href="#">HYUNDAI</a>
+                                </li>
+                                <li class="list-group-item border">
+                                    <a class="fw-bold text-dark" href="#">TOYOTA</a>
+                                </li>
+                                <li class="list-group-item border">
+                                    <a class="fw-bold text-dark" href="#">CHEVROLET</a>
+                                </li>
+                                <li class="list-group-item border">
+                                    <a class="fw-bold text-dark" href="#">AUDI</a>
+                                </li>
+                                <li class="list-group-item border">
+                                    <a class="fw-bold text-dark" href="#">BMW</a>
+                                </li>
+                                <li class="list-group-item border ">
+                                    <a class="fw-bold text-dark" href="#">LEXUS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </div>
+    <!--  Navbar ends-->
+</header>

@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="firstMod">
+@Html.Partial("_HeadTag")
+<body>
+
+    <div class="container headcontainer body-content">
+        @RenderBody()
+        @Html.Partial("_LayoutFooter")
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

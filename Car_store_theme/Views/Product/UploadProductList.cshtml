@@ -1,0 +1,181 @@
+﻿
+@{
+    ViewBag.Title = "CustomProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body class="Custom_product_body" ng-controller="productCtrl" ng-init="checkUserCookie();getProductList()">
+    <div class="sticky-top container mt-2">
+        <!--Header starts-->
+        @Html.Partial("~/Views/Shared/_LayoutHeader.cshtml")
+        <!--Header ends-->
+    </div>
+
+    <div class="container g-3 border bg-white">
+        <div class="row">
+            <div class="form-body">
+
+                <div class="form-holder">
+                    <div class="form-content">
+                        <div class="col-12 redtext text-center">
+                            <h2 class="m-3 p-3">Upload Products</h2>
+
+                            <div class="form-items bgcolor">    
+                                <form name="ProductForm" class="m-3" @*ng-submit="upload()"*@ novalidate>
+                                    <div class="row g-4">
+                                        @*Product Name*@
+                                        <div class="col-12">
+                                            <input class="form-control" type="text" name="name" ng-pattern="/^[a-zA-Z\s]*$/" ng-required="true" ng-model="name" placeholder="Name">
+                                            <div ng-show="ProductForm.$submitted || ProductForm.name.$dirty || ProductForm.name.$touched">
+                                                <span class="text-white fw-bold" ng-show="ProductForm.name.$invalid"><i class="fa fa-exclamation-circle"></i>Contain Only Alphabets</span>
+                                                <span class="text-white fw-bold" ng-show="ProductForm.name.$error.required"><i class="fa fa-exclamation-circle"></i>Product Name is Mandatory</span>
+                                            </div>
+                                        </div>
+
+                                        @*Price*@
+                                        <div class="col-12">
+                                            <input class="form-control" ng-model="price" type="text" name="Price" placeholder="Price" ng-required="true">
+                                            <div ng-show="ProductForm.$submitted || ProductForm.Price.$dirty || ProductForm.Price.$touched">
+                                                <span class="text-white fw-bold" ng-show="ProductForm.Price.$error.required"><i class="fa fa-exclamation-circle"></i>Product Price is Required</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <input class="form-control" type="file" ng-model="Image" file-model="myFile" name="Image" placeholder="Image" ng-required="true">
+                                            <div ng-show="ProductForm.$submitted || ProductForm.Image.$dirty">
+                                                <span class="text-white fw-bold" ng-show="ProductForm.Image.$error.required"><i class="fa fa-exclamation-circle"></i>Product Image is Required</span>
+                                            </div>
+                                            @*<button ng-click="uploadFile()">Upload</button>*@
+                                        </div>
+                                            
+
+
+
+                                        <div class="col-12">
+                                            <input class="form-control" type="text" name="ShortDescription" ng-model="shortDescription" placeholder="short description" ng-required="true">
+                                            <div ng-show="ProductForm.$submitted || ProductForm.ShortDescription.$dirty || ProductForm.ShortDescription.$touched">
+                                                <span class="text-white fw-bold" ng-show="ProductForm.ShortDescription.$error.required"><i class="fa fa-exclamation-circle"></i>Short Description is Mandatory</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" name="LongDescription" ng-model="longDescription" placeholder="long description" ng-required="true">
+                                            <div ng-show="ProductForm.$submitted || ProductForm.LongDescription.$dirty || ProductForm.LongDescription.$touched">
+                                                <span class="text-white fw-bold" ng-show="ProductForm.LongDescription.$error.required"><i class="fa fa-exclamation-circle"></i>Long Description is Mandatory</span>
+                                            </div>
+
+                                        </div>
+                                        @* <div class="form-group">
+            <input class="form-control" type="text" name="Quantity" ng-model="quantity" placeholder="Quantity">
+        </div>*@
+                                        @* <div class="form-group">
+            <input class="form-control" type="text" name="Color" ng-model="color" placeholder="color">
+        </div>*@
+                                        <div class="my-3">
+                                            <button type="submit" ng-disabled="Productform.$invalid" ng-click="uploadFile()" class="btn btn-success text-center">Upload</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            @*<table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Short Description</th>
+                                </tr>
+                            </thead>
+                            <tbody ng-init="GetProductList()">
+                                <tr ng-repeat="upload in dataList | limitTo:50:13">
+                                    <td>
+                                        <span>{{}}</span>
+                                    </td>
+                                    <td>
+                                        <span ng-bind="upload.ProductName"></span>
+                                    </td>
+                                    <td>
+                                        <span ng-bind="upload.Price"></span>
+                                    </td>
+                                    <td>
+                                        <span>{{}}</span>
+                                    </td>
+                                    <td>
+                                        <span>{{}}</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-1"><strong>Image</strong></div>
+            <div class="col-2"><strong>Product Name</strong></div>
+            <div class="col-1"><strong>Price</strong></div>
+            <div class="col-3"><strong>Description</strong></div>
+            <div class="col-3"><strong>Short Description</strong></div>
+            <div class="col-2"><strong>Functions</strong></div>
+
+
+            <div class="row gy-2" ng-repeat="upload in dataList">
+
+
+
+                <div class="col-1">
+                    <div class="row">
+                        <div class="col-12">
+                            <img name="image" ng-src="{{upload.Image}}" alt="{{upload.ProductName}}.jpg" style="height: 100px; width: 100px">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <span name="productname" ng-model="Productname">{{upload.ProductName}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="row">
+                        <div class="col-12">
+                            <span name="price" ng-model="price">{{upload.Price}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <span name="description" ng-model="Description">{{upload.Description}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <span name="shortdescription" ng-model="Shortdescription">{{upload.Short_Description}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="row">
+                        <div class="col-12 float-end">
+                            <span>
+                                <a href="" class="btn btn-primary" ng-click="updateProduct(upload.ProductId,Image, upload.ProductName,upload.Price,upload.Description,upload.Short_Description)">Update</a>
+                                <a href="" class="btn btn-danger" ng-click="deleteProduct(upload.ProductId)">Delete</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+   
+
+
+</body>
